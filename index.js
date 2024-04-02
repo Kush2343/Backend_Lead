@@ -1,6 +1,4 @@
-require("dotenv").config();
 const express = require("express");
-const app = express();
 const cookieParser = require("cookie-parser");
 const connectDB = require("./database/db");
 const cors = require('cors');
@@ -11,8 +9,13 @@ const phonepeRoute = require("./routes/phoneperoute");
 
 const { userRouter } = require("./Auth/route");
 
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 connectDB();
 
+const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
