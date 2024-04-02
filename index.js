@@ -18,14 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({ origin: 'http://localhost:3000' }));
 
-// 01/04/2024
-app.get("/", (req, res) => res.render("home"));
 
-app.get("/logout", (req, res) => {
-    res.cookie("jwt", "", { maxAge: "1" });
-    res.redirect("/");
-});
-  // 01/04/2024
 
 // Authentication routes
 app.use("/api/auth", require("./Auth/route"));
