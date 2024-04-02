@@ -2,21 +2,23 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const connectDB = require("./database/db");
 const cors = require('cors');
-app.use(cors());
+
 const routes = require("./Auth/route");
 const passwordReset = require("./Auth/passwordReset");
 const { adminAuth, userAuth } = require("./middleware/auth");
 const phonepeRoute = require("./routes/phoneperoute");
-
 const { userRouter } = require("./Auth/route");
 
 const dotenv = require('dotenv');
 
 dotenv.config();
 
+const app = express(); // Initialize express app here
+
+app.use(cors()); // Now you can use cors middleware after initializing app
+
 connectDB();
 
-const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
