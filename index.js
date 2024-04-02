@@ -2,6 +2,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const connectDB = require("./database/db");
 const cors = require('cors');
+app.use(cors());
 const routes = require("./Auth/route");
 const passwordReset = require("./Auth/passwordReset");
 const { adminAuth, userAuth } = require("./middleware/auth");
@@ -19,9 +20,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:3000' }));
-
-
 
 // Authentication routes
 app.use("/api/auth", require("./Auth/route"));
