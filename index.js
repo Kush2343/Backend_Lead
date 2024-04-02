@@ -44,7 +44,7 @@
         res.status(200).json({ key: process.env.KEY_ID })
     );
 
-    const PORT = process.env.PORT || 5001;
+    const PORT = process.env.PORT || 9000;
     const server = app.listen(PORT, () => console.log(`Server connected to port ${PORT}`));
 
     process.on("unhandledRejection", err => {
