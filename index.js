@@ -36,8 +36,8 @@
     app.get("/api/admin", adminAuth, (req, res) => res.send("Admin Route"));
     app.get("/api/basic", userAuth, (req, res) => res.send("User Route"));
 
-    // app.use('/api/leads', routes);
-    app.use("/api/leads", userAuth, routes);
+    app.use('/api/leads', routes);
+    // app.use("/api/leads", userAuth, routes);
 
     app.use("/api/v1", userRouter);
 
