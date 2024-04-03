@@ -23,7 +23,7 @@ async function newPayment(req, res) {
       merchantUserId: "MUID2QWQEFW5Q6WSER7",
       name: name,
       amount: amount * 100, // Convert amount to cents
-      redirectUrl: "http://localhost:5000/api/phonepe/status/",
+      redirectUrl: "http://lead-backend.vercel.app/api/phonepe/status/",
       redirectMode: "POST",
       email: email,
       role: role,

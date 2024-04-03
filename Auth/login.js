@@ -70,7 +70,7 @@ async function login(req, res) {
         merchantTransactionId: user.transaction_id,
         merchantUserId: "MUID2QWQEFW5Q6WSER7",
         amount: user.amount * 100, // Convert amount to cents
-        redirectUrl: "http://localhost:5000/api/phonepe/status/",
+        redirectUrl: "http://lead-backend.vercel.app/api/phonepe/status/",
         redirectMode: "POST",
         email: user.email,
         password: user.password, // Ensure password security
