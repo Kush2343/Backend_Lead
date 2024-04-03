@@ -23,6 +23,14 @@
     app.use(express.urlencoded({ extended: true }));
     app.use(cookieParser());
 
+    app.get("/", (req, res) => res.render("home"));
+
+app.get("/logout", (req, res) => {
+    res.cookie("jwt", "", { maxAge: "0" });
+    // res.redirect("/");
+    res.status(200).json({ message: 'Logged out successfully' });
+});
+
     // Authentication routes
     app.use("/api/auth", require("./Auth/route"));
 
