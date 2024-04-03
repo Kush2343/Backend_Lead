@@ -15,7 +15,7 @@
 
     const app = express(); // Initialize express app here
 
-    app.use(cors()); // Now you can use cors middleware after initializing app
+    app.use(cors( { origin:'https://lead-hunter-olive.vercel.app',credentials:true})); // Now you can use cors middleware after initializing app
 
     connectDB();
 
